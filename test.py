@@ -1,4 +1,4 @@
 # init file
 
 print('gugus')
-# end
+# end of document
