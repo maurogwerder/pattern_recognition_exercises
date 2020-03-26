@@ -73,7 +73,7 @@ def linear_classifier (lables_train, pixel_train, pixel_test,c):
     return predictions 
 
 h =linear_classifier(st_l2, st_p2, short_test,0.2)
-print(h)
+#print(h)
 
 
 #print(short_train[0:2000, 0])
@@ -90,7 +90,7 @@ def accuracy (lables, predictions):
 
     return accuracy
 
-print(accuracy(test_lables, h))
+#print(accuracy(test_lables, h))
 
 
 def cross_val_lin(train, C): 
@@ -205,6 +205,145 @@ print(l) #0.8576
 #0.25 seems to be the best possible value for C, also linear model over all
 #far from perfect 
 
+
+def rbf_classifier (lables_train, pixel_train, pixel_test,c):
+    
+    rbf_clf = svm.SVC(C=c, kernel = 'rbf', gamma='scale')
+    rbf_clf.fit(pixel_train,lables_train)
+    predictions = rbf_clf.predict(pixel_test)
+    return predictions 
+
+#if gamma='scale' (default) is passed then it uses 1 / (n_features * X.var()) as value of gamma,
+
+#When training an SVM with the Radial Basis Function (RBF) kernel, 
+#two parameters must be considered: C and gamma. The parameter C, 
+#common to all SVM kernels, trades off misclassification of training 
+#examples against simplicity of the decision surface. 
+#A low C makes the decision surface smooth, while a high C aims at classifying 
+#all training examples correctly. gamma defines how much influence a single 
+#training example has. The larger gamma is, 
+#the closer other examples must be to be affected.
+    
+#SO PROBS risk of overfitting with high C value 
+
+
+
+
+
+
+h =linear_classifier(st_l2, st_p2, short_test,0.2)
+
+print(accuracy(test_lables, h))
+
+
+r = rbf_classifier(st_l2, st_p2, short_test,2)
+
+print(accuracy(test_lables, r))
+
+
+def cross_val_rbf(train, C): 
+    
+    #devide the data set in 4 parts; each is once used as test set 
+    
+    test_1 = train[0:15000,1:] #only the pixesl
+    lables_1 = train[0:15000,0] #only the lables 
+    
+    
+    train_1 = train[15000:, 1:]
+    train_l1 = train[15000:, 0]
+      
+    h1 =rbf_classifier(train_l1, train_1, test_1,C)
+    a1 = accuracy(lables_1, h1)
+    
+    print('1')
+        
+    #---------------------------
+    
+    test_2 = train[15000:30000,1:] #all test pixels; assume 15000 incl. 30000 not 
+    lables_2 = train[15000:30000,0]
+     
+    train_2 = train[:15000,:] #15000 not incl.
+    
+    train_2b =train[30000:,:] #still pixels & lables
+    
+    train_2= np.concatenate((train_2, train_2b))
+    
+    train_l2 = train_2[:,0] #only lables
+    train_2 = train_2[:, 1:] #only pixels
+    
+    h2 =rbf_classifier(train_l2, train_2, test_2,C)
+    a2 = accuracy(lables_2, h2)
+    
+    print('2')
+    
+    #---------------------------
+    
+    test_3 = train[30000:45000,1:]
+    lables_3 = train[30000:45000,0]
+    
+    train_3 = train[:30000,:]
+    
+    train_3b = train[45000:,:]
+   
+    train_3= np.concatenate((train_3, train_3b))
+    
+    train_l3 = train_3[:,0]
+    train_3 = train_3[:,1:]
+    
+    
+    h3 =rbf_classifier(train_l3, train_3, test_3,C)
+    a3 = accuracy(lables_3, h3)
+    
+    print('3')
+    
+    #---------------------------
+    
+    test_4 = train[45000:,1:]
+    lables_4 = train[45000:,0]
+  
+    
+    train_4 = train[:45000, 1:]
+    train_l4 = train[:45000, 0]
+
+    
+    h4 =rbf_classifier(train_l4, train_4, test_4,C)
+    a4 = accuracy(lables_4, h4)
+    
+    print('4')
+
+    
+    #now average accuracy
+    
+    av_acu = (a1+a2+a3+a4)/4
+    
+    return av_acu
+
+
+
+t = cross_val_rbf(train, 2)
+print(t)#0.9798166666666667
+
+u = cross_val_rbf(train, 1)
+print(u)#0.9763166666666666
+
+v = cross_val_rbf(train, 3)
+print(v) #0.9807833333333332
+
+q = cross_val_rbf(train, 4)
+print(q) #0.98105
+
+r = cross_val_rbf(train, 6)
+print(r)#0.9815166666666666
+
+s = cross_val_rbf(train, 8)
+print(s)#0.9815166666666666
+
+w = cross_val_rbf(train, 10)
+print(w)#0.9816333333333332
+
+#the algorithm seems to merge to 0.98 for C=10 
+#the parameter gamma is given by 1 / (n_features * X.var()) b.c. set to 
+#'scale' 
 
 
 
