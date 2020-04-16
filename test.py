@@ -64,8 +64,8 @@ def classifier():
 
 
 def curve(data, classifier):
-    X = data[:10000, 1:]
-    y = data[:10000, 0]
+    X = data[:3000, 1:]
+    y = data[:3000, 0]
     labels = np.unique(y)
     lb = LabelBinarizer()
     lb.fit(labels)
@@ -78,11 +78,22 @@ def curve(data, classifier):
                                                                            cv=4,
                                                                            return_times=True)
     train_mean = np.mean(train_scores, axis=1)
+    train_loss = 1 - train_mean
+
     valid_mean = np.mean(valid_scores, axis=1)
+    valid_loss = 1 - valid_mean
+    plt.subplot(1, 2, 1)
     plt.plot(train_sizes, train_mean, label="Training set")
     plt.plot(train_sizes, valid_mean, label="Validation set")
     plt.legend()
     plt.title("Learning Curve: Accuracy")
+    plt.ylabel("Score")
+    plt.xlabel("Iterations")
+    plt.subplot(1,2,2)
+    plt.plot(train_sizes, train_loss, label="Training set")
+    plt.plot(train_sizes, valid_loss, label="Validation set")
+    plt.legend()
+    plt.title("Learning Curve: Loss")
     plt.ylabel("Score")
     plt.xlabel("Iterations")
     plt.show()
@@ -133,7 +144,6 @@ def optimizer(classifier, data):
     lb.fit(labels)
     y = lb.transform(y)
     clf.fit(X, y)
-    df = pd.DataFrame(clf.cv_results_)
     params_est = clf.best_params_
     print(params_est)
 
@@ -145,7 +155,7 @@ def testing(trained_model):
         data = np.array(data[1:], dtype=int)  # converts list of lists into an array of type int
         X = data[:, 1:]
         y = data[:, 0]
-        X_pred = classifier.predict(X)
+        X_pred = trained_model.predict(X)
         cm = confusion_matrix(X_pred, y)
         print("Accuracy of MLPClassifier: ", accuracy(cm))
 
