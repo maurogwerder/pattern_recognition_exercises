@@ -35,6 +35,7 @@ from sklearn.model_selection import RandomizedSearchCV
 from scipy.stats import uniform, randint
 import csv
 import pandas as pd
+from os import listdir
 
 
 #https://machinelearningmastery.com/learning-rate-for-deep-learning-neural-networks/
@@ -132,7 +133,7 @@ def training(data, classifier):
 
 def optimizer(classifier, data):
     distr = {#'learning_rate_init': [0.1, 0.01, 0.001, 0.0001, 0.00001],
-             'max_iter': [20],
+             'max_iter': [10, 20, 50, 100, 500, 1000, 2000],
              'batch_size': [1, 10, 50, 100, 500, 1000, 2000]
              #'hidden_layer_sizes': [(10,), (40,), (70,), (100,), (100, 50), (50, 10)]
             }
@@ -159,17 +160,42 @@ def testing(trained_model):
         cm = confusion_matrix(X_pred, y)
         print("Accuracy of MLPClassifier: ", accuracy(cm))
 
+def permut_load():
+    folder_names = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    datasets = ['train', 'test', 'val']
+    train_csv = []
+    test_csv = []
+    val_csv = []
+    lists = [train_csv, test_csv, val_csv]
+
+    for i in np.arange(len(datasets)):
+        for folder in folder_names:
+            mypath = '../' + datasets[i] + '/' + folder
+            filenames = [f for f in listdir(mypath)]
+            for file in filenames:
+                img = np.asarray(plt.imread(mypath + '/' + file))
+                img = img[..., 1].reshape(1, 784)[0]  # plt.imread() converts grayscale-img to RGB, so this is a way to get back to grayscale
+                tagged_img = np.concatenate([np.asarray([int(folder)]), img])
+                lists[i].append(tagged_img)
+    train_csv = np.asarray(train_csv)
+    test_csv = np.asarray(test_csv)
+    val_csv = np.asarray(val_csv)
+    return train_csv, test_csv, val_csv
 
 
 
 
-dat = load_data()
-classif = classifier()
+
+
+
+#dat = load_data()
+#classif = classifier()
 
 #loss_curve(dat, classif)
 #new_params = optimizer(classif, dat)
 # {'max_iter': 200, 'learning_rate_init': 0.001, 'hidden_layer_sizes': (100,)} for standard batch size
 # {'max_iter': 20, 'batch_size': 50}
-curve(dat, classif)
-model = training(dat, classif)
-testing(model)
+#curve(dat, classif)
+#model = training(dat, classif)
+#testing(model)
+permut_load()
