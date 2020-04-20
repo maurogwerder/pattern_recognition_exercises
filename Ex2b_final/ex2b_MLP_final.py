@@ -65,48 +65,6 @@ def classifier(max_iterations=400):
     return classifier
 
 
-# Using learning_curve() from sklearn to plot the learning function and the loss function
-# by learning with five different training sizes (given by argument train_sizes) and
-# cross-validation with four splits (given by arg cv=4)
-def curve(data, classifier, title):
-    X = data[:, 1:]  # removing labels from arrays
-    y = data[:, 0]  # takes only labels
-    labels = np.unique(y)  # all possible labels (0-9)
-    lb = LabelBinarizer()
-    lb.fit(labels)
-    y = lb.transform(y)  # binarizes label such that they become categorical
-
-    # https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html#sphx-glr-auto-examples-model-selection-plot-learning-curve-py
-    # https://scikit-learn.org/stable/modules/learning_curve.html
-    train_sizes, train_scores, valid_scores = learning_curve(classifier,
-                                                                           X, y,
-                                                                           train_sizes=np.linspace(.1, 1.0, 5),
-                                                                           cv=4)
-    train_mean = np.mean(train_scores, axis=1)  # mean of all cross-validation runs for training
-    train_loss = 1 - train_mean  # loss = 1 - accuracy
-
-    valid_mean = np.mean(valid_scores, axis=1)   # mean of all cross-validation runs for validation
-    valid_loss = 1 - valid_mean  # loss = 1 - accuracy
-
-    # plotting:
-    plt.subplot(1, 2, 1)
-    plt.plot(train_sizes, train_mean, label="Training set")
-    plt.plot(train_sizes, valid_mean, label="Validation set")
-    plt.legend()
-    plt.title("Learning Curve: Accuracy")
-    plt.ylabel("Score")
-    plt.xlabel("Images")
-    plt.subplot(1,2,2)
-    plt.plot(train_sizes, train_loss, label="Training set")
-    plt.plot(train_sizes, valid_loss, label="Validation set")
-    plt.legend()
-    plt.title("Learning Curve: Loss")
-    plt.ylabel("Score")
-    plt.xlabel("Images")
-    plt.suptitle(title, fontsize=14)
-    plt.show()
-
-
 def epoch_curve(data, classif, title):
     y = data[:45000, 0]
 
@@ -168,6 +126,48 @@ def epoch_curve(data, classif, title):
     plt.title('Loss Curve')
     plt.legend()
     plt.suptitle(title)
+    plt.show()
+
+
+# Old curve-function: NOT USED FOR RESULTS
+# This function returns accuracy against dataset-size, rather than against the epoch size.
+# Results of this function can be seen in the folder 2b_added.
+def curve(data, classifier, title):
+    X = data[:, 1:]  # removing labels from arrays
+    y = data[:, 0]  # takes only labels
+    labels = np.unique(y)  # all possible labels (0-9)
+    lb = LabelBinarizer()
+    lb.fit(labels)
+    y = lb.transform(y)  # binarizes label such that they become categorical
+
+    # https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html#sphx-glr-auto-examples-model-selection-plot-learning-curve-py
+    # https://scikit-learn.org/stable/modules/learning_curve.html
+    train_sizes, train_scores, valid_scores = learning_curve(classifier,
+                                                                           X, y,
+                                                                           train_sizes=np.linspace(.1, 1.0, 5),
+                                                                           cv=4)
+    train_mean = np.mean(train_scores, axis=1)  # mean of all cross-validation runs for training
+    train_loss = 1 - train_mean  # loss = 1 - accuracy
+
+    valid_mean = np.mean(valid_scores, axis=1)   # mean of all cross-validation runs for validation
+    valid_loss = 1 - valid_mean  # loss = 1 - accuracy
+
+    # plotting:
+    plt.subplot(1, 2, 1)
+    plt.plot(train_sizes, train_mean, label="Training set")
+    plt.plot(train_sizes, valid_mean, label="Validation set")
+    plt.legend()
+    plt.title("Learning Curve: Accuracy")
+    plt.ylabel("Score")
+    plt.xlabel("Images")
+    plt.subplot(1,2,2)
+    plt.plot(train_sizes, train_loss, label="Training set")
+    plt.plot(train_sizes, valid_loss, label="Validation set")
+    plt.legend()
+    plt.title("Learning Curve: Loss")
+    plt.ylabel("Score")
+    plt.xlabel("Images")
+    plt.suptitle(title, fontsize=14)
     plt.show()
 
 
@@ -258,24 +258,20 @@ def permut_load():
 
 
 if __name__ == '__main__':
+
+    # Non-permutated dataset:
     dat = load_data("mnist_train.csv")
     classif = classifier()
-
-    #loss_curve(dat, classif)
-    #new_params = optimizer(classif, dat)
+    new_params = optimizer(classif, dat)
     # {'max_iter': 200, 'learning_rate_init': 0.001, 'hidden_layer_sizes': (100,)} for standard batch size
-    # curve(dat, classif, title="Standard MNIST Dataset learning curves")
+    epoch_curve(dat, classifier(max_iterations=1), title="Standard MNIST Dataset learning curves")
     model = training(dat, classif)
-    # Accuracy of MLPClassifier:  0.963
     test_dat = load_data("mnist_test.csv")
     testing(model, test_dat)
-    # Accuracy of MLPClassifier:  0.8971, 0.9629
 
-    #p_train, p_test, p_val = permut_load()
-    #curve(p_train, classif, title="Permutated MNIST Dataset learning curves")
-    #p_train = np.concatenate([p_train, p_val])
-    #print(p_train.shape)
-    #model_permut = training(p_train, classif)
-    #testing(model_permut, p_test)
-    #epoch_curve(dat, classifier(max_iterations=1), title="Standard MNIST Dataset learning curves")
-    #epoch_curve(p_train, classifier(max_iterations=1), title="Permutated MNIST Dataset learning curves")
+    # Permutated Dataset
+    p_train, p_test, p_val = permut_load()
+    p_train = np.concatenate([p_train, p_val])  # Fits better with our way of crossvalidation
+    model_permut = training(p_train, classif)
+    testing(model_permut, p_test)
+    epoch_curve(p_train, classifier(max_iterations=1), title="Permutated MNIST Dataset learning curves")
