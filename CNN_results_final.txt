@@ -1,0 +1,189 @@
+CNN : Testing Network: learning rate = 0.1 accurancy = 0.098 epochs size = 10
+CNN : Testing Network: learning rate = 0.01 accurancy = 0.098 epochs size = 10
+CNN : Testing Network: learning rate = 0.001 accurancy = 0.9224 epochs size = 10
+CNN : Testing Network: learning rate = 0.0005 accurancy = 0.9394 epochs size = 10
+CNN : Testing Network: learning rate = 0.0001 accurancy = 0.9716 epochs size = 10
+CNN : Testing Network: learning rate = 5e-05 accurancy = 0.9722 epochs size = 10
+CNN : Testing Network: learning rate = 1e-05 accurancy = 0.9717 epochs size = 10
+
+Testing Network: learning rate = 5e-05 accurancy = 0.9601 epochs size = 1
+Testing Network: learning rate = 5e-05 accurancy = 0.9655 epochs size = 2
+Testing Network: learning rate = 5e-05 accurancy = 0.9671 epochs size = 3
+Testing Network: learning rate = 5e-05 accurancy = 0.9676 epochs size = 4
+Testing Network: learning rate = 5e-05 accurancy = 0.9707 epochs size = 5
+Testing Network: learning rate = 5e-05 accurancy = 0.9697 epochs size = 6
+Testing Network: learning rate = 5e-05 accurancy = 0.9706 epochs size = 7
+Testing Network: learning rate = 5e-05 accurancy = 0.9711 epochs size = 8
+Testing Network: learning rate = 5e-05 accurancy = 0.9721 epochs size = 9
+Testing Network: learning rate = 5e-05 accurancy = 0.972 epochs size = 10
+Testing Network: learning rate = 5e-05 accurancy = 0.973 epochs size = 11
+Testing Network: learning rate = 5e-05 accurancy = 0.9729 epochs size = 12
+Testing Network: learning rate = 5e-05 accurancy = 0.973 epochs size = 13
+Testing Network: learning rate = 5e-05 accurancy = 0.9736 epochs size = 14
+Testing Network: learning rate = 5e-05 accurancy = 0.9733 epochs size = 15
+Testing Network: learning rate = 5e-05 accurancy = 0.9741 epochs size = 16
+Testing Network: learning rate = 5e-05 accurancy = 0.9741 epochs size = 17
+Testing Network: learning rate = 5e-05 accurancy = 0.9742 epochs size = 18
+Testing Network: learning rate = 5e-05 accurancy = 0.9749 epochs size = 19
+Testing Network: learning rate = 5e-05 accurancy = 0.9746 epochs size = 20
+Testing Network: learning rate = 5e-05 accurancy = 0.9747 epochs size = 21
+Testing Network: learning rate = 5e-05 accurancy = 0.9746 epochs size = 22
+Testing Network: learning rate = 5e-05 accurancy = 0.9751 epochs size = 23
+Testing Network: learning rate = 5e-05 accurancy = 0.9755 epochs size = 24
+Testing Network: learning rate = 5e-05 accurancy = 0.9755 epochs size = 25
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 26
+Testing Network: learning rate = 5e-05 accurancy = 0.9758 epochs size = 27
+Testing Network: learning rate = 5e-05 accurancy = 0.9761 epochs size = 28
+Testing Network: learning rate = 5e-05 accurancy = 0.9761 epochs size = 29
+Testing Network: learning rate = 5e-05 accurancy = 0.9761 epochs size = 30
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 31
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 32
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 33
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 34
+Testing Network: learning rate = 5e-05 accurancy = 0.9765 epochs size = 35
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 36
+Testing Network: learning rate = 5e-05 accurancy = 0.9765 epochs size = 37
+Testing Network: learning rate = 5e-05 accurancy = 0.9765 epochs size = 38
+Testing Network: learning rate = 5e-05 accurancy = 0.9765 epochs size = 39
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 40
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 41
+Testing Network: learning rate = 5e-05 accurancy = 0.9763 epochs size = 42
+Testing Network: learning rate = 5e-05 accurancy = 0.9763 epochs size = 43
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 44
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 45
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 46
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 47
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 48
+Testing Network: learning rate = 5e-05 accurancy = 0.9761 epochs size = 49
+Testing Network: learning rate = 5e-05 accurancy = 0.9761 epochs size = 50
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 51
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 52
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 53
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 54
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 55
+Testing Network: learning rate = 5e-05 accurancy = 0.9759 epochs size = 56
+Testing Network: learning rate = 5e-05 accurancy = 0.9758 epochs size = 57
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 58
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 59
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 60
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 61
+Testing Network: learning rate = 5e-05 accurancy = 0.976 epochs size = 62
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 63
+Testing Network: learning rate = 5e-05 accurancy = 0.9762 epochs size = 64
+Testing Network: learning rate = 5e-05 accurancy = 0.9763 epochs size = 65
+Testing Network: learning rate = 5e-05 accurancy = 0.9763 epochs size = 66
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 67
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 68
+Testing Network: learning rate = 5e-05 accurancy = 0.9763 epochs size = 69
+Testing Network: learning rate = 5e-05 accurancy = 0.9764 epochs size = 70
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 71
+Testing Network: learning rate = 5e-05 accurancy = 0.9767 epochs size = 72
+Testing Network: learning rate = 5e-05 accurancy = 0.9768 epochs size = 73
+Testing Network: learning rate = 5e-05 accurancy = 0.9767 epochs size = 74
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 75
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 76
+Testing Network: learning rate = 5e-05 accurancy = 0.9766 epochs size = 77
+Testing Network: learning rate = 5e-05 accurancy = 0.9767 epochs size = 78
+Testing Network: learning rate = 5e-05 accurancy = 0.9767 epochs size = 79
+Testing Network: learning rate = 5e-05 accurancy = 0.9768 epochs size = 80
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 81
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 82
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 83
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 84
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 85
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 86
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 87
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 88
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 89
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 90
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 91
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 92
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 93
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 94
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 95
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 96
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 97
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 98
+Testing Network: learning rate = 5e-05 accurancy = 0.9769 epochs size = 99
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 100
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 101
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 102
+Testing Network: learning rate = 5e-05 accurancy = 0.9772 epochs size = 103
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 104
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 105
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 106
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 107
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 108
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 109
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 110
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 111
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 112
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 113
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 114
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 115
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 116
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 117
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 118
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 119
+Testing Network: learning rate = 5e-05 accurancy = 0.977 epochs size = 120
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 121
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 122
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 123
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 124
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 125
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 126
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 127
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 128
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 129
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 130
+Testing Network: learning rate = 5e-05 accurancy = 0.9771 epochs size = 131
+Testing Network: learning rate = 5e-05 accurancy = 0.9772 epochs size = 132
+Testing Network: learning rate = 5e-05 accurancy = 0.9774 epochs size = 133
+Testing Network: learning rate = 5e-05 accurancy = 0.9774 epochs size = 134
+Testing Network: learning rate = 5e-05 accurancy = 0.9774 epochs size = 135
+Testing Network: learning rate = 5e-05 accurancy = 0.9774 epochs size = 136
+Testing Network: learning rate = 5e-05 accurancy = 0.9775 epochs size = 137
+Testing Network: learning rate = 5e-05 accurancy = 0.9775 epochs size = 138
+Testing Network: learning rate = 5e-05 accurancy = 0.9775 epochs size = 139
+Testing Network: learning rate = 5e-05 accurancy = 0.9775 epochs size = 140
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 141
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 142
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 143
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 144
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 145
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 146
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 147
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 148
+Testing Network: learning rate = 5e-05 accurancy = 0.9776 epochs size = 149
+best epoch size is = 141 whit an accurancy of: 0.9776
+net_0with accurancy:  test_acc = 0.9771 test_loss = 0.13893070058095452 train_acc = 1.0 train_loss = 0.029937147546772135net_1with accurancy:  test_acc = 0.9769 test_loss = 0.13526934981606656 train_acc = 1.0 train_loss = 0.029260854209000244net_2with accurancy:  test_acc = 0.9779 test_loss = 0.1366584219540952 train_acc = 1.0 train_loss = 0.028289808809426935net_3with accurancy:  test_acc = 0.9755 test_loss = 0.1379797528248815 train_acc = 1.0 train_loss = 0.027960740928356605net_4with accurancy:  test_acc = 0.9761 test_loss = 0.1405880985094177 train_acc = 1.0 train_loss = 0.027943530905871556net_5with accurancy:  test_acc = 0.9766 test_loss = 0.13863634094890212 train_acc = 1.0 train_loss = 0.027621914917613167net_6with accurancy:  test_acc = 0.9764 test_loss = 0.14062548425860144 train_acc = 1.0 train_loss = 0.026767913058279757net_7with accurancy:  test_acc = 0.9766 test_loss = 0.1389830127060945 train_acc = 0.9999833333333333 train_loss = 0.027777693220629986net_8with accurancy:  test_acc = 0.9744 test_loss = 0.14627515254741097 train_acc = 1.0 train_loss = 0.030225316275658637net_9with accurancy:  test_acc = 0.975 test_loss = 0.13462559149212602 train_acc = 1.0 train_loss = 0.0317409019147655Final 
+Result:  test_acc = 0.1366584219540952 test_loss = PR_CNN(
+  (conv1): Sequential(
+    (0): Conv2d(1, 24, kernel_size=(5, 5), stride=(3, 3))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+  (fc): Sequential(
+    (0): Flatten()
+    (1): Linear(in_features=1536, out_features=10, bias=True)
+  )
+)
+net_0with accurancy:  test_acc = 0.9704 test_loss = 0.10434830677355872 train_acc = 0.9866666666666667 train_loss = 0.13249197937245819
+net_1with accurancy:  test_acc = 0.9727 test_loss = 0.09320656832303295 train_acc = 0.9869166666666667 train_loss = 0.1350621958549776
+net_2with accurancy:  test_acc = 0.9709 test_loss = 0.10956960511516732 train_acc = 0.98695 train_loss = 0.13212689160976726
+net_3with accurancy:  test_acc = 0.9728 test_loss = 0.10044211448992976 train_acc = 0.9868833333333333 train_loss = 0.135424467114936
+net_4with accurancy:  test_acc = 0.9713 test_loss = 0.1043927714815872 train_acc = 0.9882 train_loss = 0.12725805383338987
+net_5with accurancy:  test_acc = 0.971 test_loss = 0.1032261777579519 train_acc = 0.9858833333333333 train_loss = 0.1345898874017195
+net_6with accurancy:  test_acc = 0.9672 test_loss = 0.1210750881433456 train_acc = 0.98615 train_loss = 0.12696111634651888
+net_7with accurancy:  test_acc = 0.9675 test_loss = 0.120239412745237 train_acc = 0.98475 train_loss = 0.13736896913144434
+net_8with accurancy:  test_acc = 0.9703 test_loss = 0.1039984736306092 train_acc = 0.98625 train_loss = 0.13180348748177378
+net_9with accurancy:  test_acc = 0.971 test_loss = 0.11347325125508655 train_acc = 0.9876333333333334 train_loss = 0.11662783405058015
+Final Result:  test_acc = 0.9728 test_loss = 0.10044211448992976PR_CNN(
+  (conv1): Sequential(
+    (0): Conv2d(1, 24, kernel_size=(5, 5), stride=(3, 3))
+    (1): LeakyReLU(negative_slope=0.01)
+  )
+  (fc): Sequential(
+    (0): Flatten()
+    (1): Linear(in_features=1536, out_features=10, bias=True)
+  )
+)
