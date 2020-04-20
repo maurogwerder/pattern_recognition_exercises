@@ -26,11 +26,11 @@ The batch-size determines after how many samples the weights will be updated. Wi
 Loss curve and learning curve show more or less what was expected. Results for training and validation will slowly converge, but the
 validation loss will not worsen after time, which would indicate overfitting.
 
-Picture 1 Placeholder
+![](Figure_epochs_standard2.png)
 
 The loss-function used here is cross-entropy. There is no clear evidence of overfitting after 600 epochs, in contrary of what could be
 expected. We would expect after some epochs to see a minimum in loss. This could be due to the batch size of 50, where we won't reach
-that minimum as fast. A smaller batch-size could thus be desirable. Looking at the accuracy, this is more or less what we can expect.
+that minimum as fast. A smaller batch-size could thus be desirable. Looking at the accuracy (on the left), this is more or less what we can expect.
 Training results will always be better than results during validation.
 
 Results with the chosen best model: 
