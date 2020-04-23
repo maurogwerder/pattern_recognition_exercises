@@ -14,5 +14,6 @@ for file in files:
     plt.figure(figsize=(24, 40))
     plt.imshow(img > val, cmap='gray', interpolation='nearest')
     plt.axis('off')
+    plt.tight_layout()
     plt.savefig(OUTPATH + 'otsu_' + file)
 
