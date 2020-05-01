@@ -1,4 +1,6 @@
-
+import numpy
+from PIL import Image, ImageDraw
+import csv
 
 def window_trimmer(window):
     i = 0
@@ -17,5 +19,6 @@ def window_trimmer(window):
             j = 0
         j = j - 1
     return(window)
+    
 
 
