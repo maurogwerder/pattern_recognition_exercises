@@ -13,7 +13,7 @@ from scipy.misc import imread
 #white = 1
 
 #test vector 
-vector = np.array([1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1])
+#vector = np.array([1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1])
 #print(vector)
 
 #-----Black white transitions-------------------
@@ -32,10 +32,10 @@ def bw_transitions(vector):
     
     return bw_transitions 
 
-bla = bw_transitions(vector)
-print(bla)
+#bla = bw_transitions(vector)
+#print(bla)
   
-print(bw_transitions)
+#print(bw_transitions)
 
 #----fraction of black pixels---------------------
 
@@ -59,13 +59,22 @@ def fract_black(vector):
 # =============================================================================
 
 word_2 = plt.imread('word_2.png')
+word_40 = plt.imread('word_40.png')
+word_46 = plt.imread('word_46.png')
+
+
 plt.imshow(word_2)
 print(word_2.shape)
+
+#rows
 
 rows = int(word_2.shape[0])
 cols = int(word_2.shape[1])
 
-def binarize(img,row,col):
+def binarize(img):
+    
+    row = int(img.shape[0])
+    col = int(img.shape[1])
     
     for i in range(row):
         for j in range(col):
@@ -78,9 +87,12 @@ def binarize(img,row,col):
     
     return img 
         
-word_2 =  binarize(word_2,rows,cols)  
+word_2 =  binarize(word_2)  
 plt.imshow(word_2)   
-        
+word_40 = binarize(word_40)
+word_46 = binarize(word_46)
+plt.imshow(word_46)  
+
     
 
 def window_trimmer(window):
@@ -109,26 +121,96 @@ def window_trimmer(window):
 #print(t_trans)
 ##plt.imshow(t_vec)
 #
-n_windows = word_2.shape[1]
-#print(n_windows)
+n_windows40 = word_40.shape[1]
+n_windows46 = word_46.shape[1]
+n_windows2 = word_2.shape[1]
 
-trans = list() #vector with number of black white transitions per window
-black_frac = list()#vector with fraction of black pixels pwr window 
+trans40 = list() #vector with number of black white transitions per window
+black_frac40 = list()#vector with fraction of black pixels pwr window 
 
 
-for i in range(n_windows):
+for i in range(n_windows40):
     
-    window = word_2[:,i]
-    vector_w = window_trimmer(window)
+    window40 = word_40[:,i]
+    vector_w40 = window_trimmer(window40)
     
-    bw_tran = bw_transitions(vector_w)
-    trans.append(bw_tran)
+    bw_tran40 = bw_transitions(vector_w40)
+    trans40.append(bw_tran40)
     
-    black = fract_black(vector_w)
-    black_frac.append(black)
+    black40 = fract_black(vector_w40)
+    black_frac40.append(black40)
     
     #print(type(window))
 
-print(len(black_frac))
+
+trans46 = list() #vector with number of black white transitions per window
+black_frac46 = list()#vector with fraction of black pixels pwr window 
+
+
+for i in range(n_windows46):
+    
+    window46 = word_46[:,i]
+    vector_w46 = window_trimmer(window46)
+    
+    bw_tran46 = bw_transitions(vector_w46)
+    trans46.append(bw_tran46)
+    
+    black46 = fract_black(vector_w46)
+    black_frac46.append(black46)
+    
+    #print(type(window))
+
+
+trans2 = list() #vector with number of black white transitions per window
+black_frac2 = list()#vector with fraction of black pixels pwr window 
+
+
+for i in range(n_windows2):
+    
+    window2 = word_2[:,i]
+    vector_w2 = window_trimmer(window2)
+    
+    bw_tran2 = bw_transitions(vector_w2)
+    trans2.append(bw_tran2)
+    
+    black2 = fract_black(vector_w2)
+    black_frac2.append(black2)
+    
+    #print(type(window))
+
+
+
+
+
+
+print(black_frac46)
+
+def dtw(s, t):
+    
+    n, m = len(s), len(t)
+    dtw_matrix = np.zeros((n+1, m+1))
+    
+    for i in range(n+1):
+        for j in range(m+1):
+            dtw_matrix[i, j] = np.inf
+    
+    dtw_matrix[0, 0] = 0
+    
+    for i in range(1, n+1):
+        for j in range(1, m+1):
+            cost = abs(s[i-1] - t[j-1])
+            # take last min from a square box
+            last_min = np.min([dtw_matrix[i-1, j], dtw_matrix[i, j-1], dtw_matrix[i-1, j-1]])
+            dtw_matrix[i, j] = cost + last_min
+            
+    return dtw_matrix
+
+
+align = dtw(black_frac46,black_frac2)
+print(align)
+
+
+
+#print(len(black_frac))
 
 
