@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import csv
 import re
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 def main():
     MYPATH = 'C:/Users/mg_gw/OneDrive/Dokumente/UNIBE 8. Semester/3_Pattern_Recognition/32_exercises/03_KWS/PatRec17_KWS_Data-master/PatRec17_KWS_Data-master'
@@ -36,15 +36,14 @@ def main():
 
             # transparency (4th column)
             newImArray[:, :, 3] = mask * 255
-
             # back to Image from numpy
-            #newIm = Image.fromarray(newImArray, "RGBA")
+            newIm = Image.fromarray(newImArray, "RGBA")
 
-            if len(newImArray.shape) == 3:
-                newImArray = newImArray[:,:,0]
+            #if len(newImArray.shape) == 3:
+                #newImArray = newImArray[:,:,0]
 
-            cut_img = np.empty(newImArray.shape)
-            cut_img[:, :] = newImArray[:, :] * mask
+            #cut_img = np.full(newImArray[:,:,0].shape, 0)
+            #cut_img[:, :] = newImArray[:, :] * mask
 
             indexes = np.where(mask)
 
@@ -57,11 +56,11 @@ def main():
                 col_max = np.max(indexes[1])
                 col_min = np.min(indexes[1])
 
-                cut_img = Image.fromarray(cut_img).crop((col_min, row_min, col_max, row_max))
+                cut_img = newIm.crop((col_min, row_min, col_max, row_max))
                 # cut_img.show()
 
                 cut_img = cut_img.convert("L")
-            cut_img.save(OUTPATH + f'270_word{count}.png', 'png')  # save word image to current directory
+            newIm.save(OUTPATH + f'270_word{count}.png', 'png')  # save word image to current directory
             count += 1
 
 
