@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 from PIL import Image
 #from scipy.misc import imread
 from os.path import isfile, join
-from os import listdir
+from os import listdir, walk
+import re
 
 
 #black = 0
@@ -271,24 +272,36 @@ MYPATH = 'C:/Users/mg_gw/OneDrive/Dokumente/UNIBE 8. Semester/3_Pattern_Recognit
 
 
 def feature_all_words(path):
-    all_files = [f for f in listdir(path) if isfile(join(path, f))]  # extracts all filenames from folder
+    all_folders = [x[0] for x in walk(path)]
+    pattern_folder = 'for_image_(\d+)'
+    pattern_word = 'word_(\d+).png'
+    for folder in all_folders:
+        folderpath = path + folder + '/'
+        all_files = [f for f in listdir(folderpath) if isfile(join(folderpath, f))]  # extracts all filenames from folder
+        ref_image = Image.open(folderpath + all_files[0])
+        imArray_compare = np.asarray(ref_image)
+        compare_features = feature_extract(imArray_compare)
+        for image in all_files[1:]:
+            print(image)
+            score_list = []
+            word_tag = re.findall(pattern_word, image)[0]
 
-    ref_image = Image.open(path + all_files[0])
+            if len(word_tag) < 3:
+                amount_zeros = 3 - len(word_tag)
+                word_tag = '0' * amount_zeros + word_tag
 
-    imArray_compare = np.asarray(ref_image)
-    compare_features = feature_extract(imArray_compare)
+            folder_tag = re.findall(pattern_folder, image)[0]
+            label = int(folder_tag + word_tag)
+            score_list.append(label)
+            im = Image.open(path + image)
+            imArray = np.asarray(im)
 
-    for image in all_files[1:]:
-        print(image)
-        im = Image.open(path + image)
-        imArray = np.asarray(im)
+            features = feature_extract(imArray)
 
-        features = feature_extract(imArray)
-        score_list = []
-        for i in range(len(features)):
-            dtw_matrix = dtw(features[i], compare_features[i])
-            score_list.append(dtw_matrix[-1, -1])
-        print(score_list)
+            for i in range(len(features)):
+                dtw_matrix = dtw(features[i], compare_features[i])
+                score_list.append(dtw_matrix[-1, -1])
+            print(score_list)
 
 feature_all_words(MYPATH)
 
