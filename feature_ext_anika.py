@@ -268,13 +268,14 @@ def dtw(s, t):
     return dtw_matrix
 
 
-MYPATH = 'C:/Users/mg_gw/OneDrive/Dokumente/UNIBE 8. Semester/3_Pattern_Recognition/32_exercises/03_KWS/PatRec17_KWS_Data-master/PatRec17_KWS_Data-master/images/single_words_270/'
+MYPATH = 'C:/Users/mg_gw/OneDrive/Dokumente/UNIBE 8. Semester/3_Pattern_Recognition/32_exercises/03_KWS/PatRec17_KWS_Data-master/PatRec17_KWS_Data-master/images/single_words/'
 
 
 def feature_all_words(path):
-    all_folders = [x[0] for x in walk(path)]
+    all_folders = listdir(path)
     pattern_folder = 'for_image_(\d+)'
     pattern_word = 'word_(\d+).png'
+    print(walk(path))
     for folder in all_folders:
         folderpath = path + folder + '/'
         all_files = [f for f in listdir(folderpath) if isfile(join(folderpath, f))]  # extracts all filenames from folder
@@ -290,10 +291,10 @@ def feature_all_words(path):
                 amount_zeros = 3 - len(word_tag)
                 word_tag = '0' * amount_zeros + word_tag
 
-            folder_tag = re.findall(pattern_folder, image)[0]
+            folder_tag = re.findall(pattern_folder, folder)[0]
             label = int(folder_tag + word_tag)
             score_list.append(label)
-            im = Image.open(path + image)
+            im = Image.open(folderpath + image)
             imArray = np.asarray(im)
 
             features = feature_extract(imArray)
