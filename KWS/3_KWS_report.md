@@ -6,7 +6,7 @@ We continued preparation by extracting each word from each page by iterating thr
 and cutting the images accordingly. Preprocessing steps can be seen in the documents `placeholder otsu` and `placeholder svg`. 
 The single words will then have following format: 
 
-IMAGE OF SINGLE WORD
+![](../304_word2.png)
 
 The next step was to extract features for each word. We decided to use seven different features for each word, which are as follows:
 * Number of black/white transitions
@@ -42,12 +42,14 @@ DTW and ranking can be seen in `placeholder DTW`, plotting can be seen in `place
 Application of the algorithms for selected words can be seen below. We show three P/R-curves done with our own DTW algorithm and the
 old ranking system, and two curves done with `fastdtw` and the new ranking system:
 * 'with' (old)
+![](../with_pr_curve.jpeg)
 * 'and' (old)
+![](../and_pr_curve.jpeg)
 * 'Williamsburghs' (old)
 * '' (new)
 * '' (new)
 
-PLACEHOLDER IMAGES:
+
 
 #### Discussion
 During testing, we encountered issues with performance. We thus decided to compare each validation image with some selected images from
