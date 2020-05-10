@@ -3,7 +3,7 @@
 #### Methods
 We started by preprocessing our data. We converted all pages to a binarized image using Otsu's Method. 
 We continued preparation by extracting each word from each page by iterating through all polygons, which could be found in the `.svg`-file, 
-and cutting the images accordingly. Preprocessing steps can be seen in the documents `placeholder otsu` and `placeholder svg`. 
+and cutting the images accordingly. Preprocessing steps can be seen in the documents `otsu_KWS.py` and `placeholder svg`. 
 The single words will then have following format: 
 
 ![](../304_word2.png)
@@ -20,7 +20,7 @@ The next step was to extract features for each word. We decided to use seven dif
 As can be seen in the image of the single word, regions around the polygon are black, and thus have to be removed from the image 
 before applying. Else, they would be registered as being part of the word.
 We iterate through each word using a rolling window of width = 1px and calculate 7 features for each window.
-These 7 resulting lists are saved as a `.txt`-file. Feature extraction can be seen in `placeholder features`.
+These 7 resulting lists are saved as a `.txt`-file. Feature extraction can be seen in `save_features.py`.
 
 For applying the Dynamic Time-warping algorithm (DTW), we chose a specific keyword and selected images of the
 training set containing the keyword. We limited the amount of training words to five due to computational cost.
@@ -31,16 +31,17 @@ the computational cost. The created matrix of distances can then be used to calc
 value of the matrix. We thus get seven distances representing each feature for each image-pair.
 
 We then sort the distances and thus get a ranking. We take each rank and apply a majority voting, taking the image that is found the most often at each rank. We then draw a P/R-curve, calculating true-negative, true-positive and false-positive counts for
-increasing amounts of evaluated ranks. 
+increasing amounts of evaluated ranks. DTW and ranking can be seen in `dtw_from_featurefiles_fastdtw.py`, plotting can be seen in `placeholder plotting`.
 
 After getting some results, we decided to implement the library `fastdtw` to increase the computational speed from aprroximately
 5 hours to 30 minutes per word. We also adjusted our ranking. We now rank one feature, calculate all counts needed for a P/R-curve 
-and take the mean between all features of a word.
-DTW and ranking can be seen in `placeholder DTW`, plotting can be seen in `placeholder plotting`.
+and take the mean between all features of a word. The adjusted algorithm and ranking utilising the `fastdtw`-library can be seen in 
+`dtw_from_featurefiles_fastdtw.py`, `save_features for fastdtw.py` and `plotting_one_word.py`.
+
 
 #### Results
 Application of the algorithms for selected words can be seen below. We show three P/R-curves done with our own DTW algorithm and the
-old ranking system, and two curves done with `fastdtw` and the new ranking system:
+old ranking system, and three selected curves done with `fastdtw` and the new ranking system:
 * 'with' (old)
 
 ![](pictures/with_pr_curve.jpeg)
