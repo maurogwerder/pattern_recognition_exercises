@@ -42,12 +42,28 @@ DTW and ranking can be seen in `placeholder DTW`, plotting can be seen in `place
 Application of the algorithms for selected words can be seen below. We show three P/R-curves done with our own DTW algorithm and the
 old ranking system, and two curves done with `fastdtw` and the new ranking system:
 * 'with' (old)
-![](../with_pr_curve.jpeg)
+
+![](pictures/with_pr_curve.jpeg)
+
 * 'and' (old)
-![](../and_pr_curve.jpeg)
+
+![](pictures/and_pr_curve.jpeg)
+
 * 'Williamsburghs' (old)
-* '' (new)
-* '' (new)
+
+PLACEHOLDER
+
+* 'Letters' (new)
+
+![](pictures/L-e-t-t-e-r-s.png)
+
+* 'Clothing' (new)
+
+![](pictures/C-l-o-t-h-i-n-g.png)
+
+* 'Colonel' (new)
+
+![](pictures/C-o-l-o-n-e-l.png)
 
 
 
