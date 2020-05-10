@@ -31,7 +31,7 @@ the computational cost. The created matrix of distances can then be used to calc
 value of the matrix. We thus get seven distances representing each feature for each image-pair.
 
 We then sort the distances and thus get a ranking. We take each rank and apply a majority voting, taking the image that is found the most often at each rank. We then draw a P/R-curve, calculating true-negative, true-positive and false-positive counts for
-increasing amounts of evaluated ranks. DTW and ranking can be seen in `dtw_from_featurefiles_fastdtw.py`, plotting can be seen in `plotting.py`.
+increasing amounts of evaluated ranks. DTW and ranking can be seen in `dtw_from_featurefiles_fastdtw.py`, plotting can be seen in `plotting_final.py`.
 
 After getting some results, we decided to implement the library `fastdtw` to increase the computational speed from aprroximately
 5 hours to 30 minutes per word. We also adjusted our ranking. We now rank one feature, calculate all counts needed for a P/R-curve 
