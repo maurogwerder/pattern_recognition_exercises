@@ -41,7 +41,7 @@ and take the mean between all features of a word. The adjusted algorithm and ran
 
 #### Results
 Application of the algorithms for selected words can be seen below. We show three P/R-curves done with our own DTW algorithm and the
-old ranking system, and three selected curves done with `fastdtw` and the new ranking system:
+old ranking system (highlighted with 'old'), and three selected curves done with `fastdtw` and the new ranking system (higlighted with 'new'):
 * 'with' (old)
 
 ![](pictures/with_pr_curve.jpeg)
@@ -52,7 +52,7 @@ old ranking system, and three selected curves done with `fastdtw` and the new ra
 
 * 'Williamsburghs' (old)
 
-PLACEHOLDER
+![](pictures/williamsburgh_pr_curve.jpeg)
 
 * 'Letters' (new)
 
