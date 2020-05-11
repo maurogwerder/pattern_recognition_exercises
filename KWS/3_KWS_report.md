@@ -66,7 +66,9 @@ PLACEHOLDER
 
 ![](pictures/C-o-l-o-n-e-l.png)
 
+* 'mean_over_all_words' (new)
 
+![](pictures/mean_over_all_words.png)
 
 #### Discussion
 During testing, we encountered issues with performance. We thus decided to compare each validation image with some selected images from
@@ -79,8 +81,8 @@ significant keyword detection (see plot for 'Williamsburgh'). This correlates wi
 the validation set. The more words in the validation set, the more likely it is to get a high score for some of them. Also, if there
 is only one reference word in the training set, the scoring will be less accurate.
 
-Switching to the `fastdtw`-library and adjusting the ranking resulted in much smoother results. The accuracy is still low, but the performance does not vary as much. Adding more training words also improves the accuracy.
+Switching to the `fastdtw`-library and adjusting the ranking resulted in much smoother results. The accuracy is still low, but the performance does not vary as much.
 
-
+Overall the precision was rather low, there were some words that worked well, but for most words, even the highest precision was only around 4%. If we look at the precision-recall curve showing the mean over all words, we can see that surely the form of the curve is as expected but the precision is rather low. To get better results it would maybee help to have more elaborated features, that give a better representation of the words. 
 
 
