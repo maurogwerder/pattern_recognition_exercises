@@ -18,12 +18,15 @@ The large amount of meetings helped to verify where everyone was in their indivi
 
 As mentioned before, the tasks a-c were done twice by two members each. We used the sklearn-library for both solutions. We applied the 
 learning algorithm with a linear and an RBF-kernel, and tuned for the parameter C. Parameter tuning was accomplished using a grid search, for which we also utilised a function from sklearn.
+
+For this task and also task 2b and 2c, we hadn't encountered much room for creativity, as the task was mostly centered around utilising each library and getting them to work properly. Although it is good to get a grip on the different existing frameworks, we struggeled with modifying the code to match our wishes because of this circumstance. 
+
 #### Task 2b
 As mentioned before, the tasks a-c were done twice by two members each. We thus used the tensorflow library and the sklearn library
 respectively. The solution using sklearn was handed in. We optimized for the parameters hidden layer size, the amount of hidden layers, 
-the learning rate, and the maximal amount of iterations.
+the learning rate, and the maximal amount of iterations. We used randomized search. In hindsight, for the small amount of parameters that were tested out, a grid search would have probably been more suited. 
 
-Some parameters are already handled by the libraries. For example, there are ways to adjust the learning rate during learning, which reduces the significance of the initial learning rate. Also, in sklearn, the learning stops when the loss does not improve significantly anymore.
+Some parameters are already handled by the libraries. For example, there are ways to adjust the learning rate during learning, which reduces the significance of the initial learning rate. Also, in sklearn, the learning stops when the loss does not improve significantly anymore. 
 
 #### Task 2c
 
@@ -41,11 +44,6 @@ We had some issues with handling missing values. If there are no black pixels in
 • General thoughts about the group exercise
 
 #### Task 4
-• For each task:
-• What is special about your solution
 
-• What was your approach
-
-• What worked, what did not work
-
-• General thoughts about the group exercise
+We were able to re-use most of the code from task 3, with utilising our aforementioned improvements found at the end of the last task.
+Plotting each feature separately helped finding out the significance of each feature. We also normalized within features and images, which we didn't do in task 3. 
