@@ -39,7 +39,11 @@ Some parameters are already handled by the libraries. For example, there are way
 
 • What worked, what did not work
 
-We had some issues with handling missing values. If there are no black pixels in a window, how would we signify the non-existent upper and lower contour? Using 'None' at first needed a lot of complicated build-arounds, and thus we decided to use 0 instead, as it should not have any mathematical implications.
+A general challange for this task was, that it complexity made it hard to divide it up in smaller parts. Hence, it was sometimes hard to follow the progress of other team members.
+
+Initially we struggeled with the extraction of the different words. We soon realized that it would be disadvantagous to cut them out in the shape of the given mask, because this would make it harder to find a general approach for the coming processing steps. Additionally, we were not familiar with the svg format which made the cutting out even harder. Finally, one team member found a way to cut out the words as rectangle, which made the programming of a sliding window easier.  
+
+Furthermore, we had some issues with handling missing values. If there are no black pixels in a window, how would we signify the non-existent upper and lower contour? Using 'None' at first needed a lot of complicated build-arounds, and thus we decided to use 0 instead, as it should not have any mathematical implications.
 
 • General thoughts about the group exercise
 
