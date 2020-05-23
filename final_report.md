@@ -45,8 +45,8 @@ Our group organization in this task was improved strongly in comparison to 2a-d,
 #### Task 4
 
 We were able to re-use most of the code from task 3, with utilising our aforementioned improvements found at the end of the last task.
-Plotting the P/R-curve for each feature separately helped finding out the significance of each feature. We also normalized within features and images, which we didn't do in task 3. 
+Plotting the P/R-curve for each feature separately helped finding out the significance of each feature. We found out, that the x and y values do not provide a good feature and the categorisation imporves if we remove them for the evaluation. We also normalized within features and images, which we didn't do in task 3. 
 
-The results look much improved in comparison to task 3. This can be explained by already extracted features and less categories to choose from. In this exercise, we only have the possibility of choosing "forged" or "real", and the probability of choosing the right one by chance is approximately 55%. The gathered P/R-curves look exactly as expected, which is a confirmation that our algorithms from task 3 were working.
+The results look much improved in comparison to task 3. This can be explained by already extracted features and less categories to choose from. Furthermore we would expect very high similarity for a signature of a person. As we looked at the output from the DTW algorithm, this was confirmed. In this exercise, we only have the possibility of choosing "forged" or "real", and the probability of choosing the right one by chance is approximately 55%. The gathered P/R-curves look exactly as expected, which is a confirmation that our algorithms from task 3 were working.
 
 The good organization in task 3 simplified this task immensely, as everybody was very familiar with the problem and adjustments were found quickly.
